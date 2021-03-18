@@ -1,4 +1,9 @@
+FROM golang:alpine as golang
+WORKDIR /usr/local/go
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build src/hostinfo.go
+
 FROM scratch
-COPY hostinfo /
+COPY --from=golang /usr/local/go/hostinfo /
 CMD ["/hostinfo"]
 
