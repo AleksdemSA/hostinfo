@@ -11,7 +11,7 @@ func main() {
 
 	var (
 		port string = "8080"
-		ip   string = "127.0.0.1"
+		ip   string = "0.0.0.0"
 	)
 
 	fmt.Println("Run service on " + ip + ":" + port)
