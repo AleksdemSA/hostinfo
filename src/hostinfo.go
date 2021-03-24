@@ -1,7 +1,8 @@
 package main
 
 import (
-	"fmt"
+	"io"
+	"os"
 	"log"
 	"net/http"
 	"views"
@@ -14,7 +15,7 @@ func main() {
 		ip   string = "0.0.0.0"
 	)
 
-	fmt.Println("Run service on " + ip + ":" + port)
+	io.WriteString(os.Stdout, "Run service on " + ip + ":" + port)
 
 	http.HandleFunc("/", views.ViewHostname)
 	http.HandleFunc("/ip", views.ViewIP)
