@@ -1,0 +1,5 @@
+go.mod
+hostinfo
+bin/
+.idea
+pkg

@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-// ViewIP return IP
+// ViewIP return IP of host
 func ViewIP(writer http.ResponseWriter, request *http.Request) {
 	message := []byte("IP: ")
 	addrs, err := net.InterfaceAddrs()
